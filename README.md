@@ -1,2 +1,2 @@
-polyhedral
+polyhedral dice roller app
 ==========
