@@ -1,2 +1,1 @@
-polyhedral dice roller app
-==========
+This is a dice roller app.
