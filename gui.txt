@@ -1,4 +1,4 @@
-(define frame (new frame% (label "polyhedral dice")))
+(define frame (new frame% (label "polyhedral")))
 (define buttonZ1 (new button% 
                       (parent frame) 
                       (label "Z6->   ")
