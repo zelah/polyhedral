@@ -1,4 +1,9 @@
 (define frame (new frame% (label "polyhedral dice")))
+(define buttonZ6 (new button% 
+                      (parent frame) 
+                      (label "Z6->   ")
+                      (callback (lambda (button event)
+                                 (send button set-label (string-append "Z6->" (ZEDz (random 6))))))))
 (define button4 (new button% 
                      (parent frame) 
                      (label "d4->  ")

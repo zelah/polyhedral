@@ -1,0 +1,29 @@
+(z) number
+comment
+(=) number 1
+""d4""
+
+(z) number
+comment
+(=) number 2
+""d6""
+
+(z) number
+comment
+(=) number 3
+""d8""
+
+(z) number
+comment
+(=) number 4
+""d12""
+
+(z) number
+comment
+(=) number 5
+""d20""
+
+(z) number
+comment
+(=) number 0
+""dw""
