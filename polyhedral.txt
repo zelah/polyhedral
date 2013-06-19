@@ -1,29 +1,140 @@
-(z) number
-comment
-(=) number 1
+(polyhedral)
+comment: defines the root frame
+(always)
+(ZEDpolyhedral1) (root-frame) ""polyhedral""
+
+(ZEDpolyhedral1) polyhedral
+comment: defines the Z6 button
+(always)
+(se) (button) (five) "string-append" ""Z6->"" (sp) (sp) (sp)
+              polyhedral
+              z6-callback 
+     (ZEDpolyhedral2) polyhedral
+
+(ZEDpolyhedral2) polyhedral
+comment: defines the d4 button
+(always)
+(se) (button) (five) "string-append" ""d4->"" (sp) (sp) (sp)
+              polyhedral
+              d4-callback 
+     (ZEDpolyhedral3) polyhedral
+
+(ZEDpolyhedral3) polyhedral
+comment: defines the d6 button
+(always)
+(se) (button) (five) "string-append" ""d6->"" (sp) (sp) (sp)
+              polyhedral
+              d6-callback 
+     (ZEDpolyhedral4) polyhedral
+
+(ZEDpolyhedral4) polyhedral
+comment: defines the d8 button
+(always)
+(se) (button) (five) "string-append" ""d8->"" (sp) (sp) (sp)
+              polyhedral
+              d8-callback 
+     (ZEDpolyhedral5) polyhedral
+
+(ZEDpolyhedral5) polyhedral
+comment: defines the d10 button
+(always)
+(se) (button) (four) "string-append" ""d10->"" (sp) (sp)
+              polyhedral
+              d10-callback 
+     (ZEDpolyhedral6) polyhedral
+     
+(ZEDpolyhedral6) polyhedral
+comment: defines the d12 button
+(always)
+(se) (button) (four) "string-append" ""d12->"" (sp) (sp)
+              polyhedral
+              d12-callback 
+     (ZEDpolyhedral7) polyhedral
+
+(ZEDpolyhedral7) polyhedral
+comment: defines the d20 button
+(always)
+(se) (button) (four) "string-append" ""d20->"" (sp) (sp)
+              polyhedral
+              d20-callback 
+     (ZEDpolyhedral8) polyhedral
+     
+(ZEDpolyhedral8) polyhedral
+comment: shows everything
+(always)
+(four) "send" polyhedral "show" #true
+
+(button) label parent callback
+comment: takes label, parent and callback -> makes a button 
+(always)
+(five) "new" "button%"  (two) "label" label (two) "parent" parent (two) "callback" callback
+
+(d10-callback) button event
+comment: button is pressed -> update button
+(always)
+(four) "send" button "set-label" (three) "string-append" ""d10->"" (number->string) (random) (current-random-number-generator) 10
+
+(d12-callback) button event
+comment: button is pressed -> update button
+(always)
+(four) "send" button "set-label" (three) "string-append" ""d12->"" (number->string) (random) (current-random-number-generator) 12
+
+(d20-callback) button event
+comment: button is pressed -> update button
+(always)
+(four) "send" button "set-label" (three) "string-append" ""d20->"" (number->string) (random) (current-random-number-generator) 20
+
+(d4-callback) button event
+comment: button is pressed -> update button
+(always)
+(four) "send" button "set-label" (three) "string-append" ""d4->"" (number->string) (random) (current-random-number-generator) 4
+
+(d6-callback) button event
+comment: button is pressed -> update button
+(always)
+(four) "send" button "set-label" (three) "string-append" ""d6->"" (number->string) (random) (current-random-number-generator) 6
+
+(d8-callback) button event
+comment: button is pressed -> update button
+(always)
+(four) "send" button "set-label" (three) "string-append" ""d8->"" (number->string) (random) (current-random-number-generator) 8
+
+(root-frame) label
+comment: takes a label -> makes a root frame
+(always)
+(three) "new" "frame%" (two) "label" label
+
+(z6) integer
+comment: integer is one -> the result of rolling a Z6
+(=) integer 1
 ""d4""
 
-(z) number
-comment
-(=) number 2
+(z6) integer
+comment: integer is two -> the result of rolling a Z6
+(=) integer 2
 ""d6""
 
-(z) number
-comment
-(=) number 3
+(z6) integer
+comment: integer is three -> the result of rolling a Z6
+(=) integer 3
 ""d8""
 
-(z) number
-comment
-(=) number 4
+(z6) integer
+comment: integer is four -> the result of rolling a Z6
+(=) integer 4
 ""d12""
 
-(z) number
-comment
-(=) number 5
+(z6) integer
+comment: integer is five -> the result of rolling a Z6
+(=) integer 5
 ""d20""
 
-(z) number
-comment
-(=) number 0
+(z6) integer
+comment: integer is six -> the result of rolling a Z6
+(=) integer 6
 ""dw""
+
+(z6-callback) button event
+comment: button is pressed -> update button
+(always)
+(four) "send" button "set-label" (three) "string-append" ""Z6->"" (z6) (random) (current-random-number-generator) 6
