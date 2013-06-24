@@ -6,7 +6,7 @@ comment: defines the root frame
 (ZEDpolyhedral1) polyhedral
 comment: defines the Z6 button
 (always)
-(se) (button) (five) "string-append" ""Z6->"" (sp) (sp) (sp)
+(se) (button) (005) "string-append" ""Z6->"" (sp) (sp) (sp)
               polyhedral
               z6-callback 
      (ZEDpolyhedral2) polyhedral
@@ -14,7 +14,7 @@ comment: defines the Z6 button
 (ZEDpolyhedral2) polyhedral
 comment: defines the d4 button
 (always)
-(se) (button) (five) "string-append" ""d4->"" (sp) (sp) (sp)
+(se) (button) (005) "string-append" ""d4->"" (sp) (sp) (sp)
               polyhedral
               d4-callback 
      (ZEDpolyhedral3) polyhedral
@@ -22,7 +22,7 @@ comment: defines the d4 button
 (ZEDpolyhedral3) polyhedral
 comment: defines the d6 button
 (always)
-(se) (button) (five) "string-append" ""d6->"" (sp) (sp) (sp)
+(se) (button) (005) "string-append" ""d6->"" (sp) (sp) (sp)
               polyhedral
               d6-callback 
      (ZEDpolyhedral4) polyhedral
@@ -30,7 +30,7 @@ comment: defines the d6 button
 (ZEDpolyhedral4) polyhedral
 comment: defines the d8 button
 (always)
-(se) (button) (five) "string-append" ""d8->"" (sp) (sp) (sp)
+(se) (button) (005) "string-append" ""d8->"" (sp) (sp) (sp)
               polyhedral
               d8-callback 
      (ZEDpolyhedral5) polyhedral
@@ -38,7 +38,7 @@ comment: defines the d8 button
 (ZEDpolyhedral5) polyhedral
 comment: defines the d10 button
 (always)
-(se) (button) (four) "string-append" ""d10->"" (sp) (sp)
+(se) (button) (004) "string-append" ""d10->"" (sp) (sp)
               polyhedral
               d10-callback 
      (ZEDpolyhedral6) polyhedral
@@ -46,7 +46,7 @@ comment: defines the d10 button
 (ZEDpolyhedral6) polyhedral
 comment: defines the d12 button
 (always)
-(se) (button) (four) "string-append" ""d12->"" (sp) (sp)
+(se) (button) (004) "string-append" ""d12->"" (sp) (sp)
               polyhedral
               d12-callback 
      (ZEDpolyhedral7) polyhedral
@@ -54,7 +54,7 @@ comment: defines the d12 button
 (ZEDpolyhedral7) polyhedral
 comment: defines the d20 button
 (always)
-(se) (button) (four) "string-append" ""d20->"" (sp) (sp)
+(se) (button) (004) "string-append" ""d20->"" (sp) (sp)
               polyhedral
               d20-callback 
      (ZEDpolyhedral8) polyhedral
@@ -62,47 +62,47 @@ comment: defines the d20 button
 (ZEDpolyhedral8) polyhedral
 comment: shows everything
 (always)
-(four) "send" polyhedral "show" #true
+(004) "send" polyhedral "show" #true
 
 (button) label parent callback
 comment: takes label, parent and callback -> makes a button 
 (always)
-(five) "new" "button%"  (two) "label" label (two) "parent" parent (two) "callback" callback
+(005) "new" "button%"  (002) "label" label (002) "parent" parent (002) "callback" callback
 
 (d10-callback) button event
 comment: button is pressed -> update button
 (always)
-(four) "send" button "set-label" (three) "string-append" ""d10->"" (number->string) (random) (current-random-number-generator) 10
+(004) "send" button "set-label" (003) "string-append" ""d10->"" (number->string) (random) (current-random-number-generator) 10
 
 (d12-callback) button event
 comment: button is pressed -> update button
 (always)
-(four) "send" button "set-label" (three) "string-append" ""d12->"" (number->string) (random) (current-random-number-generator) 12
+(004) "send" button "set-label" (003) "string-append" ""d12->"" (number->string) (random) (current-random-number-generator) 12
 
 (d20-callback) button event
 comment: button is pressed -> update button
 (always)
-(four) "send" button "set-label" (three) "string-append" ""d20->"" (number->string) (random) (current-random-number-generator) 20
+(004) "send" button "set-label" (003) "string-append" ""d20->"" (number->string) (random) (current-random-number-generator) 20
 
 (d4-callback) button event
 comment: button is pressed -> update button
 (always)
-(four) "send" button "set-label" (three) "string-append" ""d4->"" (number->string) (random) (current-random-number-generator) 4
+(004) "send" button "set-label" (003) "string-append" ""d4->"" (number->string) (random) (current-random-number-generator) 4
 
 (d6-callback) button event
 comment: button is pressed -> update button
 (always)
-(four) "send" button "set-label" (three) "string-append" ""d6->"" (number->string) (random) (current-random-number-generator) 6
+(004) "send" button "set-label" (003) "string-append" ""d6->"" (number->string) (random) (current-random-number-generator) 6
 
 (d8-callback) button event
 comment: button is pressed -> update button
 (always)
-(four) "send" button "set-label" (three) "string-append" ""d8->"" (number->string) (random) (current-random-number-generator) 8
+(004) "send" button "set-label" (003) "string-append" ""d8->"" (number->string) (random) (current-random-number-generator) 8
 
 (root-frame) label
 comment: takes a label -> makes a root frame
 (always)
-(three) "new" "frame%" (two) "label" label
+(003) "new" "frame%" (002) "label" label
 
 (z6) integer
 comment: integer is one -> the result of rolling a Z6
@@ -137,4 +137,4 @@ comment: integer is six -> the result of rolling a Z6
 (z6-callback) button event
 comment: button is pressed -> update button
 (always)
-(four) "send" button "set-label" (three) "string-append" ""Z6->"" (z6) (random) (current-random-number-generator) 6
+(004) "send" button "set-label" (003) "string-append" ""Z6->"" (z6) (random) (current-random-number-generator) 6
